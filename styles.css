@@ -207,8 +207,18 @@ ul {
   }
 }
 
+/* ---- cart svg ---- */
+.cart-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
 /* ---- cart badge in nav ---- */
 .cart-link .cart-badge {
+  position: static;
+  top: auto;
+  right: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -221,3 +231,5 @@ ul {
   font-size: 0.7rem;
   text-align: center;
 }
+
+
