@@ -1,0 +1,260 @@
+/* ==========================================================
+   BREAD LOVE — MENU PAGE STYLES
+   ==========================================================
+   Load cart.css BEFORE this file.
+   Cart panel, badge and stepper styles live in cart.css.
+   ========================================================== */
+
+:root {
+  --cream:     #FBF3E4;   /* page background */
+  --honey:     #F6E3BE;   /* warm section blocks */
+  --oak:       #8B5E34;   /* mid brown */
+  --walnut:    #4A2F1B;   /* dark brown — banner, bottom bar */
+  --crust:     #D2601A;   /* toasted orange accent (from the logo) */
+  --gold:      #E0A82E;   /* lamp gold highlight */
+  --ink:       #2E1F14;   /* body text */
+  --ink-soft:  #7A6350;   /* secondary text */
+  --line:      #E5D3B3;   /* hairline borders */
+  --white:     #FFFDF8;
+
+  --bar-height: 74px;     /* overrides cart.css so the panel sits above the bar */
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Karla", system-ui, sans-serif;
+  padding-bottom: calc(var(--bar-height) + 24px);
+}
+
+
+/* ============ BANNER ============ */
+
+.banner {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 18px 24px 20px;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.05) 0 2px, transparent 2px 46px),
+    linear-gradient(160deg, #5C3A21, var(--walnut));
+  color: var(--honey);
+  text-align: center;
+  box-shadow: 0 2px 14px rgba(74, 47, 27, .28);
+}
+
+.back {
+  position: absolute;
+  left: 20px;
+  top: 22px;
+  color: var(--honey);
+  text-decoration: none;
+  font-size: .88rem;
+  opacity: .8;
+}
+.back:hover { opacity: 1; }
+
+.banner-mark h1 {
+  margin: 0;
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  letter-spacing: .5px;
+  color: var(--gold);
+}
+
+.banner-mark p {
+  margin: 4px 0 0;
+  font-size: .8rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity: .72;
+}
+
+.banner-logo { height: 56px; display: block; margin: 0 auto 6px; }
+
+
+/* ============ LAYOUT: RAIL + ITEMS ============ */
+
+.menu-layout {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+
+/* ---- left category rail ---- */
+
+.tabs {
+  position: sticky;
+  top: 104px;
+  display: flex;
+  flex-direction: column;
+  background: var(--honey);
+  border-right: 1px solid var(--line);
+  min-height: calc(100vh - 104px);
+  padding-top: 8px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 16px 12px 16px 16px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: .92rem;
+  color: var(--ink-soft);
+  border-left: 3px solid transparent;
+  transition: background .18s, color .18s, border-color .18s;
+}
+
+.tab:hover { background: rgba(210, 96, 26, .08); }
+
+.tab.active {
+  background: var(--cream);
+  color: var(--walnut);
+  font-weight: 700;
+  border-left-color: var(--crust);
+}
+
+.tab-count {
+  font-size: .7rem;
+  padding: 2px 6px;
+  border-radius: 20px;
+  background: rgba(74, 47, 27, .12);
+  color: var(--ink-soft);
+}
+.tab.active .tab-count { background: var(--crust); color: var(--white); }
+
+
+/* ---- right item list ---- */
+
+.sections { padding: 0 0 40px; }
+
+.section-head {
+  padding: 26px 20px 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.section-head h2 {
+  margin: 0;
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--walnut);
+}
+
+.section-head p {
+  margin: 3px 0 0;
+  font-size: .82rem;
+  color: var(--ink-soft);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--line);
+  transition: background .15s;
+}
+.item:hover { background: var(--white); }
+
+.item-text h3 {
+  margin: 0;
+  font-size: .98rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.item-price {
+  margin: 3px 0 0;
+  font-size: .92rem;
+  font-weight: 700;
+  color: var(--crust);
+}
+
+.items .empty {
+  margin: 0;
+  padding: 26px 20px;
+  color: var(--ink-soft);
+  font-size: .9rem;
+  font-style: italic;
+}
+
+
+/* ============ BOTTOM CART BAR (menu page only) ============ */
+
+.cart-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  height: var(--bar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--walnut);
+  border-radius: 14px 14px 0 0;
+  box-shadow: 0 -4px 22px rgba(74, 47, 27, .3);
+}
+
+.cart-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: var(--honey);
+  font-family: inherit;
+}
+
+.bar-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--honey);
+  color: var(--walnut);
+}
+.bar-icon svg { width: 24px; height: 24px; }
+.bar-icon .cart-badge { border: 2px solid var(--walnut); top: -4px; right: -4px; }
+
+.cart-label { display: flex; flex-direction: column; text-align: left; }
+.cart-label-top   { font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; opacity: .65; }
+.cart-label-total { font-size: 1.05rem; font-weight: 700; color: var(--gold); }
+
+
+/* ============ MOBILE ============ */
+
+@media (max-width: 600px) {
+  .menu-layout { grid-template-columns: 96px 1fr; }
+  .tabs { top: 96px; min-height: calc(100vh - 96px); }
+  .tab  { padding: 14px 8px 14px 12px; font-size: .84rem; }
+  .tab-count { display: none; }
+
+  .item { padding: 12px 14px; }
+  .section-head { padding: 20px 14px 10px; }
+  .cart-bar { border-radius: 0; }
+  .cart-label-top { display: none; }
+}

@@ -206,3 +206,18 @@ ul {
     font-size: 0.68rem;
   }
 }
+
+/* ---- cart badge in nav ---- */
+.cart-link .cart-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35rem;
+  padding: 0.1rem 0.35rem;
+  margin-left: 6px;
+  border-radius: 999px;
+  background: var(--crust);
+  color: var(--crumb);
+  font-size: 0.7rem;
+  text-align: center;
+}
