@@ -37,17 +37,33 @@ ul {
   list-style: none;
 }
 
+/* ---- brand layout ---- */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
 /* ---- brand wordmark ---- */
+
 .brand-name {
   display: block;
   font-family: var(--display);
-  font-size: 1.6rem;
+  font-size: 2.0rem;
   letter-spacing: 0.02em;
+  line-height: 1.5;
 }
 
 .brand-tag {
   display: block;
-  font-size: 0.62rem;
+  font-size: 0.82rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--egg);
@@ -63,6 +79,12 @@ ul {
   color: var(--crumb);
   font-size: 0.75rem;
   letter-spacing: 0.08em;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 }
 
 .topbar a:hover {
@@ -96,9 +118,9 @@ ul {
 .nav-links a {
   position: relative;
   padding-bottom: 4px;
-  font-size: 0.78rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -121,22 +143,12 @@ ul {
 }
 
 .cart-link {
-  font-size: 0.78rem;
+  font-size: 1.05rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.cart-count {
-  display: inline-block;
-  min-width: 1.35rem;
-  padding: 0.1rem 0.35rem;
-  border-radius: 999px;
-  background: var(--crust);
-  color: var(--crumb);
-  font-size: 0.7rem;
-  text-align: center;
-}
 
 /* ---- temporary placeholder ---- */
 .placeholder {
@@ -164,14 +176,12 @@ ul {
   padding: 3rem var(--pad);
 }
 
-.footer-links,
 .footer-social {
   display: grid;
   gap: 0.6rem;
   font-size: 0.82rem;
 }
 
-.footer-links a:hover,
 .footer-social a:hover {
   color: var(--egg);
 }
